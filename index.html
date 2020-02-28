@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zipcar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="topnav" id="navbar">
+        <a href="#home"
+          ><img
+            id="logo"
+            width="185px"
+            height="68p"
+            src="/media/zipcar-logo.png"
+        /></a>
+        <div class="der">
+          <a href="#how">How it works?</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#why">Why Zipcar?</a>
+          <a href="#btn">Join us</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </nav>
+      <script>
+        window.onscroll = function() {
+          scrollFunction();
+        };
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 30 ||
+            document.documentElement.scrollTop > 30
+          ) {
+            document.getElementById("navbar").style.padding = "15px 10px";
+            document.getElementById("logo").style.width = "160px";
+            document.getElementById("logo").style.height = "59px";
+            document.getElementById("navbar").style.backgroundColor =
+              "rgba(106, 106, 97, 0.678)";
+          } else {
+            document.getElementById("navbar").style.padding = "30px 10px";
+            document.getElementById("logo").style.width = "185px";
+            document.getElementById("logo").style.height = "68px";
+            document.getElementById("navbar").style.backgroundColor = "#6A6A61";
+          }
+        }
+        function myFunction() {
+          var x = document.getElementById("navbar");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+    </header>
+    <section id="home">
+      <img class="slider" src="/media/slider2.png" />
+    </section>
+    <section id="how">
+      <h1>How it works?</h1>
+      <img class="slider" src="/media/slider3.png" />
+    </section>
+    <section id="pricing"></section>
+    <section id="why">
+      <img class="slider" src="/media/slider1.png" />
+    </section>
+    <section id="sign">
+      <img class="slider" src="/media/slider4.png" />
+      <button id="btn" class="btn">Join us</button>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+          
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("btn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      </script>
+    </section>
+    <footer></footer>
+  </body>
+</html>
